@@ -1,0 +1,233 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\comb}[2]{{}^{#1}\mathrm{C}_{#2}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\newcommand{\cosec}{}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}  
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 5}
+\author{Gaureesha Kajampady - EP20BTECH11005}
+\maketitle  
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/gaureeshk/assignment5/blob/main/Codes/assignment5.py
+\end{lstlisting}
+%
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/gaureeshk/assignment5/blob/main/assignment5.tex
+\end{lstlisting}
+\section{Problem}
+(CSIR UGC NET EXAM (Dec 2014), Q.105)\\
+Let $X_{1},X_{2},X_{3},...$ be independent random variables with $E(X_{k})=0$ and Var($X_{k}$)=k. Let $S_{n}\sum_}_{k=1}^{n}X_{k}$.Then as n $\to \infty$,\\
+\begin{enumerate}
+    \item{$\frac{S_{n}}{n^{\frac{3}{2}}} \to $0 in probability}\\
+    \item{$\frac{S_{n}}{n^{\frac{3}{2}}} \to $0 in distribution}\\
+    \item{$\frac{S_{n}X_{n}}{n^{\frac{5}{2}}} \to $0 in distribution}\\
+    \item{$\frac{S_{n}X_{n}}{n^{\frac{5}{2}}} \to $0 in probability}\\
+\end{enumerate}
+\section{Solution} 
+\begin{definition}
+    (convergence in probability)\\
+    Let $X_1, X_2$, . . . be an infinite sequence of random variables, and let $Y$ be another random variable. Then the sequence $\{X_{n}\}$ converges in probability to $Y$, if for all $\epsilon >0$, 
+    \begin{align}
+        \lim_{n \to \infty}\pr{|X_n-Y|\geq \epsilon}=0
+    \end{align}
+And we write as $n \to \infty$, $X_n \to Y$ in probability.
+\end{definition}
+\begin{definition}
+        (Convergence in Distribution)\\
+        Let $X, X_{1}, X_{2},\dots $ be random variables. Then we say that the sequence $\{X_n\}$ converges to X, if $\forall x \in R^1$ such that $\pr{X=x}=0$, we have
+        \begin{align}
+            \lim_{n \to \infty}\pr{X_n \leq x}=\pr{X \leq x}.
+        \end{align}
+        \end{definition}
+\begin{theorem} \label{1}
+        If $X_n \to X$ in probability, $X_n \to X$ in distribution.
+        \end{theorem}
+\begin{theorem} \label{2}
+(Chebyshev's inequality)\\
+        Let X be a random variable with finite expected value $\mu$ and finite non-zero variance $\sigma^2$. Then for any real number k > 0,
+        \begin{align}
+            \pr{\abs{X-\mu}\geq \epsilon} \leq \frac{\sigma^{2}}{\epsilon^{2}}
+        \end{align}
+\end{theorem}
+We know that,\\Since $S_{n}$ is a sum of random variables, it itself is a random variable.
+We also know that, 
+\begin{align} 
+E\brak{\sum_{i=1}^{n}X_{i}}=\sum_{i=1}^{n}E(X_{i}) 
+\end{align} 
+Hence, 
+\begin{align} 
+E\brak{S_{n}}=\sum_{i=0}^{n}0=0 \\
+\implies E\brak{\frac{S_{n}}{n^{\frac{3}{2}}}}=0
+\end{align} 
+Since the random variables $X_{1},X_{2}$,.. are independent \begin{align} 
+Var(\sum_{i=1}^{n}X_{i})=\sum_{i=1}^{n}Var(X_{i})\\
+Var(S_{n})=\sum_{i=1}^{n}i=\frac{n \times (n+1)}{2}\\
+\implies Var\brak{\frac{S_{n}}{n^{\frac{3}{2}}}}&=\frac{Var(S_{n})}{n^{3}}\\
+&=\frac{(n+1)}{2n^{2}}
+\end{align} 
+Hence as n $\to \infty$,
+\begin{align}
+    E\brak{\frac{S_{n}}{n^{\frac{3}{2}}}} \to 0\\
+    Var\brak{\frac{S_{n}}{n^{\frac{3}{2}}}} \to 0\\
+\end{align}
+Using theorem \ref{2} (Chebyshev's inequality),
+\begin{align}
+    \pr{\abs{\frac{S_{n}}{n^{\frac{3}{2}}}-\mu}\geq \epsilon} \leq \frac{\sigma^{2}}{\epsilon^{2}}
+\end{align}
+As n$\to \infty$, $\mu \to 0$ and $\sigma \to 0$
+\begin{align}
+    \implies \frac{\sigma^{2}}{\epsilon^{2}} \to 0\\
+    \implies  \pr{\abs{\frac{S_{n}}{n^{\frac{3}{2}}}-0}\geq \epsilon} \to 0
+\end{align}
+Hence $\frac{S_{n}}{n^{\frac{3}{2}}}$ converges to 0 in probability.\\
+By using theorem \ref{1},\\
+$\implies$ $\frac{S_{n}}{n^{\frac{3}{2}}}$ converges to 0 in distribution.
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
